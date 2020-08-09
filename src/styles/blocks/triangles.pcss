@@ -1,0 +1,27 @@
+.triangles {
+  display: flex;
+
+  &--pointed-down {
+    .triangles__shape {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.triangles__shape {
+  width: 50%;
+  fill: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: block;
+  height: 100%;
+
+  &--position--left {
+    left: 0;
+  }
+  &--position--right {
+    right: 0;
+  }
+}
+
