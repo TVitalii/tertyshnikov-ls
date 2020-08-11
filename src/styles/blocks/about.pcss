@@ -31,4 +31,15 @@
 .about__ps {
   font-style: italic;
   margin-bottom: 36px;
+position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    background: url('~images/decor/star.png') left bottom / contain no-repeat;
+    display: block;
+    height: 30%;
+    width: 30%;
+    left: -10%;
+  }
 }
+
