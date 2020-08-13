@@ -1,5 +1,29 @@
 .socials {
   display: flex;
+    &--border {
+    .socials__item {
+      width: 50px;
+      height: 50px;
+      border: 1px solid currentColor;
+      border-radius: 50%;
+      margin-right: 19px;
+    }
+    .socials__link {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    .socials__icon {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
 }
 
 .socials__item {
@@ -7,10 +31,16 @@
   &:last-child {
     margin-right: 0;
   }
+  @include phones {
+    display: none;
+  }
 }
 
 .socials__icon {
   width: 25px;
   height: 25px;
   fill: $text-color;
+  &:hover {
+      fill: #1a1c22;
+    }
 }
