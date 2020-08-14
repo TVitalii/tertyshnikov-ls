@@ -107,6 +107,13 @@
     @include tablets {
       margin-bottom: 32px;
     }
+    @include phones {
+    margin-right: 30%;
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
   }
   .menu__link {
     color: #fff;

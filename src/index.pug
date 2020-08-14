@@ -55,12 +55,12 @@ block content
             p Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
           .about__ps
             | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+  .triangles.triangles_top
+    svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_left
+      polygon(points="0,0 0,100 1000,100")
+    svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_right
+      polygon(points="0,100 1000,100 1000,0")
   .middle-section
-    .triangles.middle-section__triangles_top
-      svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape--position--left
-        polygon(points="0,0 0,100 1000,100")
-      svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape--position--right
-        polygon(points="0,100 1000,100 1000,0")
     section.values
       .container.values__container
         .values__wrapper
@@ -119,10 +119,10 @@ block content
                 p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
               .works-slider__link 
                 a(href="").iconed-link Посмотреть сайт 
-    .triangles.middle-section__triangles_bottom.triangles--pointed-down
-      svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape--position--left
+    .triangles.triangles_bottom
+      svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_left
         polygon(points="0,0 1000,0 1000,100")
-      svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape--position--right
+      svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_right
         polygon(points="0,0 0,100 1000,0")
     section.contacts
       .container.contacts__container
