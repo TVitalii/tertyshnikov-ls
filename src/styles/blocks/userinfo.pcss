@@ -4,6 +4,18 @@
   justify-content: center;
 }
 
+.userinfo {
+  text-align: center;
+  @include desktop {
+    display: flex;
+    text-align: left;
+  }
+  @include tablets {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+}
 .userinfo__title {
   color: rgba($text-color, .4);
   font-weight: bold;
@@ -12,16 +24,28 @@
   margin-bottom: 20px;
   margin-right: 60px;
   padding-top: 10px;
+  @include desktop {
+    text-align: right;
+    margin-bottom: 0;
+    padding-top: 8px;
+    margin-right: 5%;
+  }
+  @include tablets {
+    text-align: center;
+    margin-right: 0;
+  }
+  @include phones {
+    font-size: 14px;
+    padding: 0 10%;
+  }
 }
 
 .userinfo__name {
-  font-size: 72px;
   font-weight: 800;
-  line-height: 0.9;
-  font-stretch: expanded;
-  flex-basis: 400px
-}
+  font-size: 72px;
+  line-height: 1;
 
-/*.userinfo__occ {
-  white-space: nowrap;
-}*/
+  @include phones {
+    font-size: 36px;
+  }
+}

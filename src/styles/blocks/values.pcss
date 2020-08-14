@@ -4,7 +4,9 @@
 
 .values__container {
   position: relative;
-
+@include tablets {
+    padding-bottom: 350px;
+  }
   &:before {
     content: "";
     position: absolute;
@@ -14,16 +16,43 @@
     height: 85%;
     width: 70%;
     left: -35%;
+    @include tablets {
+      bottom: 0;
+      left: 50%;
+      height: 300px;
+      transform: translateX(-50%);
+      background-position: center center;
+    }
+
+    @include phones {
+      width: 100%;
+    }
   }
 }
 
+.values__wrapper {
+  position: relative;
+}
 .values__title {
   margin-bottom: 82px;
   display: flex;
   justify-content: center;
-  width: 59%;
+  width: 60%;
   margin-left: 20%;
   flex-direction: column;
+   @include desktop {
+    width: 40%;
+    margin-left: 0;
+  }
+  @include tablets {
+    width: 70%;
+    text-align: center;
+  }
+  @include phones {
+    width: 100%;
+    margin-left: 0;
+    text-align: left;
+  }
 }
 
 .values__title-text {
@@ -41,8 +70,14 @@
 .values__widget {
   display: flex;
   justify-content: flex-end;
+  @include tablets {
+    justify-content: center;
+  }
 }
 
 .values__widget-container {
-  width: 66%;
+  width: 65%;
+  @include tablets {
+    width: 95%;
+  }
 }
