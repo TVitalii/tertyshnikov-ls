@@ -40,8 +40,11 @@
 .about__title {
   font-weight: bold;
   font-size: 36px;
-  margin-top: 30px;
+  margin-bottom: 50px;
   color: $text-color;
+}
+.about__text-info {
+margin-bottom: 45px;
 }
 
 .about__ps {
@@ -56,6 +59,9 @@ position: relative;
     height: 30%;
     width: 30%;
     left: -10%;
+    @include phones {
+    display: none;
+  }
   }
 }
 
