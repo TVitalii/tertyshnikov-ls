@@ -7,6 +7,10 @@
 .skills-row__list {
   display: flex;
   margin-left: -4%;
+  flex-wrap: wrap;
+  @include phones {
+    justify-content: center;
+  }
 }
 
 .skills-row__item {
