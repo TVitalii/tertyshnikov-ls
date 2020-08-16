@@ -1,4 +1,4 @@
-.works-slider {
+.works-preview {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -7,7 +7,7 @@
   }
 }
 
-.works-slider__pics {
+.works-preview__pics {
   width: 66%;
   position: relative;
   z-index: 10;
@@ -39,7 +39,7 @@
   }
 }
 
-.works-slider__pics-content {
+.works-preview__pics-content {
   z-index: 10;
   position: absolute;
   top: 0;
@@ -52,7 +52,7 @@
   }
 }
 
-.works-slider__fullpic-container {
+.works-preview__fullpic-container {
   position: absolute;
   top: 0;
   right: 0;
@@ -60,13 +60,13 @@
   height: 100%; 
 }
 
-.works-slider__fullpic {
+.works-preview__fullpic {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.works-slider__thumbs {
+.thumbs {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -76,22 +76,23 @@
   }
 }
 
-.works-slider__thumb-item {
+.thumbs__item {
   height: 100px;
   transition: .2s;
+  overflow: hidden;
   &.active,
   &:hover {
     outline: 3px solid #f29400;
   }
 }
 
-.works-slider__thumb {
+.thumbs__pic {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.works-slider__buttons {
+.square-btns{
   position: absolute;
   top: 100%;
   right: 0;
@@ -103,7 +104,7 @@
   }
 }
 
-.works-slider__btn {
+button.square-btns__item {
   width: 50px;
   height: 50px;
   background: #2d3c4e;
@@ -146,7 +147,7 @@
   }
 }
 
-.works-slider__data {
+.works-preview__data {
   width: 24%;
   @include tablets {
     width: 90%;
@@ -154,16 +155,13 @@
   }
 }
 
-   
-.works-slider__thumb-link {
-  display: block;
+.thumbs-link {
   height: 100%;
 }
 
-.works-slider__tags {
+.tags {
   display: flex;
   flex-wrap: wrap;
-  
   margin-bottom: 26px;
   justify-content: center;
   @include tablets {
@@ -174,7 +172,7 @@
   }
 }
 
-.works-slider__tag-item {
+.tags__item {
   padding: 13px 21px;
   background: #f1f5f9;
   font-size: 15px;
@@ -188,26 +186,22 @@
   }
 }
 
-.works-slider__title {
+.works-preview__title {
   font-size: 30px;
   margin-bottom: 42px;
   font-weight: bold;
 }
 
-.works-slider__desc {
+.works-preview__desc {
   font-weight: 600;
   color: rgba($text-color, .7);
   line-height: 1.8;
-}
-
-.works-slider__desc {
   margin-bottom: 38px;
 }
 
-.works-slider__link {
+/*.thumbs__link {
   display: block;
-}
-
+}*/
 
 .fade-enter-active, .fade-leave-active {
   transition: .3s;
@@ -250,4 +244,7 @@
     background: svg-load('link.svg', fill=$links-color) center center no-repeat;
     margin-right: 20px;
   }
+}
+.works-preview__info{
+padding-left: 1.875rem;
 }
