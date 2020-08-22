@@ -36,13 +36,13 @@ new Vue({
       });
     },
     slide(direction) {
-      const reviews = this.$refs["reviews"].$swiper;
+      const slider = this.$refs["slider"].$swiper;
       switch(direction) {
-        case "next":
-          reviews.slideNext()
+        case "next" :
+          slider.slideNext()
           break;
-        case "prev":
-          reviews.slidePrev()
+        case "prev" :
+          slider.slidePrev()
           break;
       }
     }
