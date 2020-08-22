@@ -1,18 +1,22 @@
 .works-preview {
   display: flex;
-  justify-content: space-between;
+
   align-items: flex-start;
   @include tablets {
     flex-direction: column;
-    
   }
 }
 
 .works-preview__pics {
-  width: 66%;
+  max-width: 980px;
   position: relative;
   z-index: 10;
-  height: 340px;
+  height: auto;
+  
+  @include desktop {
+    width: 620px;
+    height: 340px;
+  }
   @include tablets {
     width: 85%;
   }
@@ -23,16 +27,18 @@
   &:before {
     content: attr(data-slide);
     position: absolute;
-    top: 50%;
-    transform: translateY(-60%);
-    line-height: 1;
-    left: 100%;
+    top: 15%;
+    transform: translateY(0);
+    line-height: 0.65;
+    left: 90%;
     font-size: 400px;
     font-weight: 800;
-    margin-left: -8%;
     color: rgba($text-color, .05);
-    @include tablets {
-      font-size: 300px;
+    
+    @include desktop {
+    font-size: 300px;
+    transform: translateY(-50%);
+    top: 30%;
  }
     @include phones {
     display: none;
@@ -91,9 +97,9 @@
   right: 0;
   display: flex;
   @include phones {
-    position: relative;
-    top: -15%;
-    left: 47%;
+    top: 100%;
+    right: 0;
+    display: flex;
   }
 }
 
@@ -148,18 +154,21 @@ button.square-btns__item {
   }
 }
 
-.thumbs-link {
+.thumbs__link {
   display: block;
   height: 100%;
+  padding: 0;
 }
 
 .tags {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 26px;
-  justify-content: center;
+
   @include tablets {
+    justify-content: center;
     margin-top: 105px;
+
   }
   @include phones {
     margin-top: 60px;
@@ -240,5 +249,16 @@ button.square-btns__item {
   }
 }
 .works-preview__info{
-padding-left: 1.875rem;
+  padding-left: 135px;
+  width: 45%;
+  box-sizing: content-box;
+  @include desktop {
+    padding-left: 90px;
+    width: 30%;
+    text-align: center;
+ }
+  @include tablets {
+    padding-left: 0px;
+    width: 95%;
+  }
 }

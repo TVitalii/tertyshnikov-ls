@@ -3,16 +3,26 @@ import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 import "swiper/swiper-bundle.css";
 
 new Vue({
-  el: "#reviews-component",
-  template: "#reviews-container",
+  el: "#slider-component",
+  template: "#slider-container",
   components: {
     Swiper, SwiperSlide
   },
   data() {
+
     return {
       reviews: [],
-      reviewsOptions: {
-        slidesPerView: 2
+      sliderOptions: {
+        breakpoints: {
+          // when window width is >= 320px
+          '320': {
+            slidesPerView: 1,
+          },
+          // when window width is >= 480px
+          '480': {
+            slidesPerView: 2,
+          },
+        }
       }
     }
   },
@@ -26,13 +36,13 @@ new Vue({
       });
     },
     slide(direction) {
-      const slider = this.$refs["slider"].$swiper;
-      switch (direction) {
+      const reviews = this.$refs["reviews"].$swiper;
+      switch(direction) {
         case "next":
-          slider.slideNext()
+          reviews.slideNext()
           break;
         case "prev":
-          slider.slidePrev()
+          reviews.slidePrev()
           break;
       }
     }
