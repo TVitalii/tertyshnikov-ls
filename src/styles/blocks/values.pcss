@@ -15,10 +15,13 @@
     position: absolute;
     background: url('~images/decor/bag.jpg') left bottom / contain no-repeat;
     display: block;
-    bottom: -10%;
-    height: 85%;
+    bottom: 0;
+    height: 80%;
     width: 70%;
-    left: -35%;
+    left: -20%;
+    @include desktop {
+      left: -25%;
+    }
     @include tablets {
       bottom: 0;
       left: 50%;
