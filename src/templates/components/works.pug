@@ -29,7 +29,7 @@ script(type="text/x-template")#preview-thumbs
         v-for="slide in works" :key="slide.id"
         :class="{active: currentWork.id === slide.id}"
         )
-      button.thumbs__link
+        button.thumbs__link
         img(:src="slide.photo").thumbs__pic
 
 script(type="text/x-template")#preview-btns
