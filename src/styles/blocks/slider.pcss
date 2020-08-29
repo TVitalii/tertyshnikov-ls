@@ -1,3 +1,11 @@
+.slider {
+    width: 80%;
+
+    @include tablets {
+        width: 100%;
+    }
+}
+
 .slider__header {
   display: flex;
   align-items: center;
@@ -31,8 +39,8 @@
   border-radius: 50%;
   margin-right: 30px;
   &:hover {
-        color: #4a00ed;
-        transition: .3s;
+        color: #008BFF;
+        transition: .3s;;
     }
   &:last-child {
     margin-right: 0;
