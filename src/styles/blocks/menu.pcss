@@ -11,6 +11,22 @@
   white-space: nowrap;
   font-weight: 600;
   &:hover {
-      color: #4a00ed;
+    color: #6d83bb;
+    transition: .3s;
+  }
+    &:after {
+    content: "";
+    background-color: #6d83bb;
+    display: block;
+    height: 2px;
+    width: 0;
+    transition: width .3s ease-in-out;
+  }
+  &:hover:after {
+        width: 100%;
+    }
+
+    &:focus:after {
+        width: 100%;
     }
 }
