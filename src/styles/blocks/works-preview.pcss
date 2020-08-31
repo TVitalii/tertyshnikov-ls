@@ -1,6 +1,7 @@
 .works-preview {
   display: flex;
-  align-items: center;
+
+  align-items: flex-start;
   @include tablets {
     flex-direction: column;
   }
@@ -256,19 +257,13 @@ button.square-btns__item {
   @include desktop {
     padding-left: 90px;
     width: 30%;
-    text-align: start;
+    text-align: center;
  }
   @include tablets {
     padding-left: 0px;
     width: 95%;
-    text-align: center;
   }
   @include phones {
     text-align: start;
-    padding-left: 10%;
-    width: 85%;
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
   }
 }

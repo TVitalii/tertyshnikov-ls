@@ -30,7 +30,7 @@ script(type="text/x-template")#preview-thumbs
         :class="{active: currentWork.id === slide.id}"
         )
         button.thumbs__link
-        img(:src="slide.photo").thumbs__pic
+            img(:src="slide.photo").thumbs__pic
 
 script(type="text/x-template")#preview-btns
   .square-btns

@@ -1,22 +1,21 @@
-script(type="text/x-template")#slider
+script(type="text/x-template")#slider-container
 
-    .reviews__slider.slider
+    .slider
         .slider__header
             .slider__title.section-title
                 h3 Что обо мне говорят
             .slider__buttons
-                button(type="button" @click="previous()" ref="prevBtn").slider__btn.slider__btn--right
-                button(type="button" @click="next()" ref="nextBtn").slider__btn.slider__btn--left
-        flickity(ref="flickity" :options="flickityOptions").reviews__content
-            .reviews__content-item.quote.quote(v-for="review in reviews")
-                .quote
+                button(type="button" @click="previous()" ref="prevBtn").slider__round-btn.slider__round-btn--right
+                button(type="button" @click="next()" ref="nextBtn").slider__round-btn.slider__round-btn--left
+        flickity(ref="flickity" :options="flickityOptions").slider__content
+            .slider__item.quote.quote(v-for="review in reviews")
+                .quote__content
                     .quote__text
                         p {{review.text}}
-                    .quote__user
-                      .user-min
-                        .user-min__avatar
-                          .user-min__pic-wrapper
-                            img(:src="review.pic").user-min__avatar-pic
-                        .user-min__info
-                          .user-min__name {{review.name}}
-                          .user-min__occ {{review.occ}}
+                    .quote__user.user
+                        .user__avatar
+                            .user__avatar-wrapper
+                                img(:src="review.photo").user__avatar-img
+                            .user-min__info
+                                .user-min__name {{review.name}}
+                                .user-min__occ {{review.occ}}

@@ -1,94 +1,103 @@
 .slider {
     width: 80%;
-
     @include tablets {
         width: 100%;
     }
 }
 
 .slider__header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 95px;
-  @include phones {
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 30px;
-  }
+    padding-bottom: 100px;
+    display: flex;
+    justify-content: flex-start;
+
+    @include tablets {
+        padding-bottom: 72px;
+    }
+
+    @include phones {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @include phones {
+        align-items: center;
+        text-align: center;
+    }
 }
 
-.slider__title.section-title {
-  margin-bottom: 0;
-  margin-right: 10%;
-  @include phones {
-    margin-right: 0%;
-    margin-bottom: 25px;
-    text-align: center;
-  }
+.slider__title > h3 {
+    color: #464d62;
+    font-size: 36px;
+    font-weight: 700;
+    padding-right: 122px;
+
+    @include desktop {
+        padding-right: 77px;
+    }
+
+    @include tablets {
+        padding-right: 30px;
+    }
+
+    @include phones {
+        padding-right: 0;
+        padding-bottom: 27px;
+    }
+}
+
+.slider__round-btn {
+    width: 50px;
+    height: 50px;
+    border: 1.3px solid currentColor;
+    position: relative;
+    border-radius: 50%;
+
+    &:hover {
+        color: #008BFF;
+        transition: .3s;
+    }
+
+    &--left {
+        &:before {
+            content: "";
+            width: 8px;
+            height: 10px;
+            display: block;
+            background: svg-load('right-arrow-button.svg', fill=$text-color) center center / contain no-repeat;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &--right {
+        &:before {
+            content: "";
+            width: 8px;
+            height: 10px;
+            display: block;
+            background: svg-load('left-arrow-button.svg', fill=$text-color) center center / contain no-repeat;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
 }
 
 .slider__buttons {
-  display: flex;
+    display: flex;
 }
 
-.slider__btn {
-  width: 50px;
-  height: 50px;
-  border: 1.3px solid currentColor;
-  position: relative;
-  border-radius: 50%;
-  margin-right: 30px;
-  &:hover {
-        color: #008BFF;
-        transition: .3s;;
-    }
-  &:last-child {
-    margin-right: 0;
-  }
-  &:before {
-    content: "";
-    width: 8px;
-    height: 10px;
-    display: block;
-    background: svg-load('arrow-down.svg', fill=$text-color) center center / contain no-repeat;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  &_prev {
-    &:before {
-      transform: translate(-50%, -50%) rotate(-180deg);
-    }
-  }
-}
-
-.reviews__content {
+.slider__content {
   overflow: hidden;
-  display: flex;
-  align-items: flex-start;
-  will-change: transform;
-  transition: transform .5s;
-
-  @include tablets {
-    margin-left: 0;
-  }
-  @include phones {
-    width: 100%;
-    margin-left: 0;
-  }
 }
 
-.reviews__content-item {
-  flex-shrink: 0;
-  padding-right: 30px;
-  width: 50%;
+.slider__round-btn {
+    margin-right: 30px;
 
-  @include phones {
-    margin-right: 0;
-    width: 100%;
-  }
-  &:last-child {
-    margin-right: 0;
-  }
+    &:last-child {
+        margin-right: 0;
+    }
 }

@@ -3,7 +3,7 @@ import Flickity from 'vue-flickity';
 
 new Vue({
     el: '#slider-component',
-    template: '#slider',
+    template: '#slider-container',
     components: {
         Flickity
     },
