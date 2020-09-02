@@ -13,9 +13,10 @@ script(type="text/x-template")#slider-container
                     .quote__text
                         p {{review.text}}
                     .quote__user.user
-                        .user__avatar
-                            .user__avatar-wrapper
-                                img(:src="review.photo").user__avatar-img
+                        .user-min
+                            .user-min__avatar
+                                .user-min__avatar-wrapper
+                                    img(:src="review.photo").user__avatar-img
                             .user-min__info
                                 .user-min__name {{review.name}}
                                 .user-min__occ {{review.occ}}

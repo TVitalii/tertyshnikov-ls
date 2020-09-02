@@ -1,7 +1,9 @@
 .quote {
-  padding-left: 158px;
+  padding-left: 90px;
   width: 50%;
-
+@include tablets {
+    padding-left: 40px;
+  }
   @include phones {
     padding-left: 0;
     width: 100%;
@@ -9,8 +11,7 @@
 }
 
 .quote__content {
-      position: relative;
-
+    position: relative;
 
   &:before {
       content: "";
@@ -21,7 +22,7 @@
       background: svg-load('quote.svg', fill=$text-color) center center / contain no-repeat;
       position: absolute;
       top: 0;
-      left: -84px;
+      left: -100px;
 
       @include tablets {
         top: -10%;
@@ -31,7 +32,7 @@
   }
 }
 
-.quote__text > p {
+.quote__text {
     margin-bottom: 30px;
     color: rgba($text-color, .5);
     font-weight: 600;
