@@ -1,0 +1,38 @@
+.login-page-component {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("~images/bg/admin.jpg") center center / cover no-repeat;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.5;
+    background: $text-color;
+  }
+}
+
+.form {
+  width: 560px;
+  padding: 50px 80px 60px;
+  background: #fff;
+}
+
+.form-title {
+  font-size: 36px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.row {
+  margin-bottom: 35px;
+}
