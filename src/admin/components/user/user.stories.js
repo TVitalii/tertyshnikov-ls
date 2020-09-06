@@ -1,4 +1,5 @@
 import user from "./user";
+
 export default {
   title: "user",
   components: {user}
@@ -7,7 +8,6 @@ export default {
 export const defaultView = () => ({
   components: {user},
   template: `
-    
-    </headline>
+    <user /> 
   `
-});
+})
