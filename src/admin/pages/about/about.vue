@@ -31,7 +31,7 @@
         </ul>
       </div>
       <div class="container" v-else>
-        loading...
+        loading...gity
       </div>
     </div>
   </div>
