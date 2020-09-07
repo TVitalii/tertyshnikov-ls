@@ -1,8 +1,11 @@
 <template>
   <card slim>
-    <edit-line slot="title" v-model="categoryTitle" 
+    <edit-line
+      slot="title"
+      v-model="categoryTitle"
       :editModeByDefault="empty"
       @remove="$emit('remove', $event)"
+      @approve="$emit('approve', $event)"
     />
     <template slot="content">
       <ul class="skills" v-if="empty === false">

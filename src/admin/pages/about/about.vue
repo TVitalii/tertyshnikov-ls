@@ -40,6 +40,7 @@
 <script>
 import button from "../../components/button";
 import category from "../../components/category";
+import { mapActions, mapState } from "vuex";
 
 export default {
   components: {
@@ -48,14 +49,32 @@ export default {
   },
   data() {
     return {
-      categories: [],
-      emptyCatIsShown: false
+      emptyCatIsShown: false,
+    };
+  },
+  computed: {
+    ...mapState("categories",{
+      categories: state => state.data
+    })
+  },
+  methods: {
+    ...mapActions({
+      createCategoryAction: "categories/create",
+      fetchCategoriesAction: "categories/fetch"
+    }),
+    async createCategory(categoryTitle) {
+      try {
+        await this.createCategoryAction(categoryTitle);
+        this.emptyCatIsShown = false;
+      } catch (error) {
+        console.log(error.message); 
+      }
     }
   },
-    created() {
-      this.categories = require("../../data/categories.json");
-    }
-  };
+  created() {
+    this.fetchCategoriesAction();
+  },
+};
 </script>
 
 <style lang="postcss" scoped src="./about.pcss">
