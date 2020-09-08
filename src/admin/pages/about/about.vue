@@ -31,7 +31,7 @@
         </ul>
       </div>
       <div class="container" v-else>
-        loading...gity
+        loading...
       </div>
     </div>
   </div>
@@ -60,8 +60,24 @@ export default {
   methods: {
     ...mapActions({
       createCategoryAction: "categories/create",
-      fetchCategoriesAction: "categories/fetch"
+      fetchCategoriesAction: "categories/fetch",
+      addSkillAction: "skills/add",
+      removeSkillAction: "skills/remove",
+      editSkillAction: "skills/edit",
     }),
+    createSkill(akill, categoryId) {
+      const newSkil = {
+        ...skill,
+        categoryId: categoryId
+      }
+      this.addSkillAction(newSkill);
+    },
+    removeSkill() {
+      this.removeSkillAction();
+    },
+    editSkill() {
+      this.editSkillAction();
+    },
     async createCategory(categoryTitle) {
       try {
         await this.createCategoryAction(categoryTitle);
