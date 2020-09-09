@@ -65,18 +65,22 @@ export default {
       removeSkillAction: "skills/remove",
       editSkillAction: "skills/edit",
     }),
-    createSkill(akill, categoryId) {
-      const newSkil = {
+    async createSkill(skill, categoryId) {
+      const newSkill = {
         ...skill,
-        categoryId: categoryId
+        category: categoryId
       }
-      this.addSkillAction(newSkill);
+      await this.addSkillAction(newSkill);
+
+      skill.title = "";
+      skill.percent = "";
     },
-    removeSkill() {
-      this.removeSkillAction();
+    removeSkill(skill) {
+      this.removeSkillAction(skill);
     },
-    editSkill() {
-      this.editSkillAction();
+    async editSkill(skill) {
+      await this.editSkillAction(skill);
+      skill.editmode = false;
     },
     async createCategory(categoryTitle) {
       try {

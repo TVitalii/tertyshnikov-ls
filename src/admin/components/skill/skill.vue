@@ -3,8 +3,8 @@
     <div class="title">{{skill.title}}</div>
     <div class="percent">{{skill.percent}}</div>
     <div class="buttons">
-      <icon symbol="pencil" class="btn" @click="editmode = true" grayscale />
-      <icon symbol="trash" class="btn" @click="$emit('remove', skill.id)" grayscale />
+      <icon symbol="pencil" class="btn" @click="currentSkill.editmode = true" grayscale />
+      <icon symbol="trash" class="btn" @click="$emit('remove', currentSkill)" grayscale />
     </div>
   </div>
 
@@ -45,9 +45,9 @@ export default {
     return {
       editmode: false,
       currentSkill: {
-        id: 0,
-        title: this.skill.title,
-        percent: this.skill.percent
+        id: this.skill.id,
+        percent: this.skill.percent,
+        category: this.skill.category
       }
     };
   },
