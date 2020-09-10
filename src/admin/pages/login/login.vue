@@ -37,17 +37,17 @@ import { mapActions } from "vuex";
 export default {
   mixins: [ValidatorMixin],
   validators: {
-    "user.name": value => {
+    "user.name": (value) => {
       return Validator.value(value).required("Введите имя пользователя");
     },
-    "user.password": value => {
+    "user.password": (value) => {
       return Validator.value(value).required("Введите пароль");
     },
   },
   data: () => ({
     user: {
       name: "",
-      password
+      password: "",
     },
     isSubmitDisabled: false,
   }),

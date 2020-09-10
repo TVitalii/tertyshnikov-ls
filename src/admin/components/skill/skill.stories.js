@@ -2,13 +2,13 @@ import skill from "./skill";
 import { action } from "@storybook/addon-actions";
 
 const methods = {
-    onApprove: action("onApprove"),
-    onRemove: action("onRemove")
+  onApprove: action("onApprove"),
+  onRemove: action("onRemove")
 }
 
 export default {
-    title: "skill",
-    components: { skill },
+  title: "skill",
+  components: { skill },
 };
 
 export const defaultView = () => ({

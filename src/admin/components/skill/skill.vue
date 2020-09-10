@@ -1,5 +1,5 @@
 <template>
-  <div class="skill-component" v-if="editmode === false">
+  <div class="skill-component" v-if="currentSkill.editmode === false">
     <div class="title">{{skill.title}}</div>
     <div class="percent">{{skill.percent}}</div>
     <div class="buttons">
@@ -10,45 +10,39 @@
 
   <div class="skill-component" v-else>
     <div class="title">
-      <app-input noSidePaddings v-model="currentSkill.title"
-      :errorMessage="validation.firstError('currentSkill.title')" />
+      <app-input noSidePaddings v-model="currentSkill.title" />
     </div>
     <div class="percent">
       <app-input v-model="currentSkill.percent" type="number" min="0" max="100" maxlength="3" />
     </div>
     <div class="buttons">
       <icon symbol="tick" class="btn" @click="$emit('approve', currentSkill)" />
-      <icon symbol="cross" class="btn" @click="editmode = false" />
+      <icon symbol="cross" class="btn" @click="currentSkill.editmode = false" />
     </div>
   </div>
 </template>
 
 <script>
-import {Validator, mixin} from 'simple-vue-validator';
 import input from "../input";
 import icon from "../icon";
+
 export default {
-    mixins: [mixin],
-  validators: {
-    "currentSkill.title": val => {
-      return Validator.value(val).required("Заполните строку");
-    }
-  },
   props: {
     skill: {
       type: Object,
       default: () => {},
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
-      editmode: false,
       currentSkill: {
         id: this.skill.id,
+        title: this.skill.title,
         percent: this.skill.percent,
-        category: this.skill.category
-      }
+        category: this.skill.category,
+        editmode: false,
+      },
     };
   },
   components: {

@@ -1,19 +1,24 @@
 <template>
-  <div 
-    :class="['skill-add-line-component', {blocked: blocked}]"
-  >
+  <div :class="['skill-add-line-component', {blocked: blocked}]">
     <div class="title">
       <app-input
         :errorMessage="validation.firstError('skill.title')"
-      v-model="skill.title" placeholder="Новый навык" />
+        v-model="skill.title"
+        placeholder="Новый навык"
+      />
     </div>
     <div class="percent">
       <app-input
         :errorMessage="validation.firstError('skill.percent')"
-      v-model="skill.percent" type="number" min="0" max="100" maxlength="3" />
+        v-model="skill.percent"
+        type="number"
+        min="0"
+        max="100"
+        maxlength="3"
+      />
     </div>
     <div class="button">
-      <round-button type="round" @click="hendleClick" />
+      <round-button type="round" @click="handleClick" />
     </div>
   </div>
 </template>
@@ -37,7 +42,7 @@ export default {
     },
   },
   props: {
-    blocked: Boolean
+    blocked: Boolean,
   },
   components: {
     appInput: input,

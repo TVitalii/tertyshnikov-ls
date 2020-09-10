@@ -19,12 +19,13 @@ const links = [
     {id: 1, title: "Работы", alias: "works", active: false},
     {id: 2, title: "Отзывы", alias: "reviews", active: false},
 ];
+
 export default {
-    data() {
+  data() {
     return {
-        links
-        }
+      links
     }
+  }
 }
 </script>
 

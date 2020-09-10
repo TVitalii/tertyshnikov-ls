@@ -1,13 +1,13 @@
 import navigation from "./navigation";
 
 export default {
-    title: "navigation",
-    components: { navigation }
+  title: "navigation",
+  components: { navigation }
 }
 
 export const defaultView = () => ({
-    components: { navigation },
-    template: `
+  components: { navigation },
+  template: `
     <navigation /> 
-    `
+  `
 })

@@ -6,13 +6,12 @@
         <icon symbol="pencil" grayscale @click="editmode = true"></icon>
       </div>
     </div>
-    <div v-else class="title" @submit.prevent="handleSubmit">
+    <div v-else class="title">
       <div class="input">
         <app-input
           placeholder="Название новой группы"
-          v-model="newGroup.name"
-          :errorMessage="validation.firstError('newGroup.name')"
           :value="value"
+          :errorText="errorText"
           @input="$emit('input', $event)"
           @keydown.native.enter="onApprove"
           autofocus="autofocus"
@@ -32,54 +31,39 @@
 </template>
 
 <script>
-import {Validator, mixin} from 'simple-vue-validator';
 export default {
-
-  mixins: [mixin],
-    validators: {
-      "newGroup.name": val => {
-        return Validator.value(val).required("Заполните строку");
-      }
-  },
   props: {
     value: {
       type: String,
-      default: ""
+      default: "",
     },
     errorText: {
       type: String,
-      default: ""
+      default: "",
     },
     editModeByDefault: Boolean,
-    blocked: Boolean
+    blocked: Boolean,
   },
   data() {
     return {
-      newGroup: {
-        name: ""
-      },
       editmode: this.editModeByDefault,
-      title: this.value
+      title: this.value,
     };
   },
   methods: {
-
-    handleSubmit() {
-      console.log('submit');
-    },
-
     onApprove() {
+      if (this.value.trim() === "") return false;
       if (this.title.trim() === this.value.trim()) {
         this.editmode = false;
       } else {
         this.$emit("approve", this.value);
       }
-    }
+    },
   },
   components: {
     icon: () => import("components/icon"),
-    appInput: () => import("components/input")
-  }
+    appInput: () => import("components/input"),
+  },
 };
 </script>
 
